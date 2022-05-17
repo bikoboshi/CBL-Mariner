@@ -1,28 +1,26 @@
-Vendor:         Microsoft Corporation
-Distribution:   Mariner
+Summary:        A WPE backend designed for Linux desktop systems
 Name:           wpebackend-fdo
 Version:        1.12.0
 Release:        1%{?dist}
-Summary:        A WPE backend designed for Linux desktop systems
-
 License:        BSD
+Vendor:         Microsoft Corporation
+Distribution:   Mariner
 URL:            https://github.com/Igalia/%{name}
-Source0:        https://github.com/Igalia/%{name}/archive/%{version}/%{name}-%{version}.tar.xz
-
+Source0:        https://github.com/Igalia/WPEBackend-fdo/archive/refs/tags/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
-BuildRequires:  mesa-libEGL-devel
-BuildRequires:  libxkbcommon-devel
-BuildRequires:  libwpe-devel
-BuildRequires:  wayland-devel
 BuildRequires:  glib2-devel
+BuildRequires:  libwpe-devel
+BuildRequires:  libxkbcommon-devel
+BuildRequires:  mesa-libEGL-devel
+BuildRequires:  wayland-devel
 
 %description
 A WPE backend designed for Linux desktop systems.
 
 %package       devel
-Summary:       Development files for %{name}
-Requires:      %{name}%{?_isa} = %{version}-%{release}
+Summary:        Development files for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description   devel
 The %{name}-devel package contains libraries, build data, and header
@@ -57,6 +55,7 @@ popd
 %changelog
 * Sat May 14 2022 Sriram Nambakam <snambakam@microsoft.com> - 1.12.0-1
 - Update to 1.12.0
+- License verified
 
 * Fri Oct 15 2021 Pawel Winogrodzki <pawelwi@microsoft.com> - 1.6.0-2
 - Initial CBL-Mariner import from Fedora 32 (license: MIT).
@@ -78,9 +77,9 @@ popd
 
 * Thu Sep 19 2019 Chris King <bunnyapocalypse@protonmail.com> - 1.4.0-2
 - Change location of libWPEBackend-fdo.so to allow for WPE backend
- 
+
 * Wed Sep 18 2019 Chris King <bunnyapocalypse@protonmail.com> - 1.4.0-1
-- new version
+- New version
 
 * Sat Jul 27 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.3.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
